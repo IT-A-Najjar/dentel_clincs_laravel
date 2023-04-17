@@ -1,8 +1,10 @@
 <?php
 
-namespace Patients;
+namespace App\Models;
 
-class Patients extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Patients extends Model {
 
 	protected $table = 'Patients';
 	public $timestamps = true;

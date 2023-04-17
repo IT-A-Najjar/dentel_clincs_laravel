@@ -1,8 +1,10 @@
 <?php
 
-namespace Consulting;
+namespace App\Models;
 
-class Consulting extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Consulting extends Model {
 
 	protected $table = 'Consulting';
 	public $timestamps = false;

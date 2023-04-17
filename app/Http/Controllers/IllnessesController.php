@@ -1,15 +1,25 @@
-<?php 
+<?php
+namespace App\Http\Controllers;
 
-class IllnessesController extends BaseController {
+use App\Models\Illnesses;
+use Exception;
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
+use Faker\Provider\Base;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
+
+class IllnessesController extends Controller {
+
+
   public function index()
   {
-    
+    try{
+      $allillnes=  Illnesses::all();
+      return $allillnes;
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
 
   /**
@@ -19,7 +29,11 @@ class IllnessesController extends BaseController {
    */
   public function create()
   {
-    
+    try{
+
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
 
   /**
@@ -27,9 +41,17 @@ class IllnessesController extends BaseController {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    try{
+      $request->validate([
+        'name'=>'required'
+      ]);
+      Illnesses::create($request->all());
+      return redirect()->route('illnesses.index');
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
 
   /**
@@ -40,7 +62,11 @@ class IllnessesController extends BaseController {
    */
   public function show($id)
   {
-    
+    try{
+
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
 
   /**
@@ -51,7 +77,12 @@ class IllnessesController extends BaseController {
    */
   public function edit($id)
   {
-    
+    try{
+      $illedit =  Illnesses::find($id);
+      return  $illedit;
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
 
   /**
@@ -60,9 +91,18 @@ class IllnessesController extends BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update(Request $request, $id)
   {
-    
+    try{
+      $request->validate([
+        'name'=>'required'
+      ]);
+      $aa = Illnesses::findOrFail($id);
+      $aa->name=$request->input('name');
+      $aa->save();
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
 
   /**
@@ -73,9 +113,14 @@ class IllnessesController extends BaseController {
    */
   public function destroy($id)
   {
-    
+    try{
+      $deletedata=Illnesses::findorFail($id);
+      $deletedata->delete();
+    }catch (Exception $e){
+      Log::error($e);
+    }
   }
-  
+
 }
 
 ?>

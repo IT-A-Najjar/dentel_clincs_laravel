@@ -1,8 +1,10 @@
 <?php
 
-namespace Events;
+namespace App\Models;
 
-class Events extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Events extends Model {
 
 	protected $table = 'Events';
 	public $timestamps = false;

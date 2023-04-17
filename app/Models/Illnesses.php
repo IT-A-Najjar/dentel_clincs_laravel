@@ -1,8 +1,9 @@
 <?php
 
-namespace Illnesses;
-
-class Illnesses extends Eloquent {
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Illnesses extends Model {
 
 	protected $table = 'Illnesses';
 	public $timestamps = true;

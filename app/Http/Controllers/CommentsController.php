@@ -1,6 +1,8 @@
-<?php 
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Routing\Controller;
 
-class CommentsController extends BaseController {
+class CommentsController extends Controller {
 
   /**
    * Display a listing of the resource.
@@ -9,7 +11,7 @@ class CommentsController extends BaseController {
    */
   public function index()
   {
-    
+
   }
 
   /**
@@ -19,7 +21,7 @@ class CommentsController extends BaseController {
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -29,7 +31,7 @@ class CommentsController extends BaseController {
    */
   public function store()
   {
-    
+
   }
 
   /**
@@ -40,7 +42,7 @@ class CommentsController extends BaseController {
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -51,7 +53,7 @@ class CommentsController extends BaseController {
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -62,7 +64,7 @@ class CommentsController extends BaseController {
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -73,9 +75,9 @@ class CommentsController extends BaseController {
    */
   public function destroy($id)
   {
-    
+
   }
-  
+
 }
 
 ?>

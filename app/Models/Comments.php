@@ -1,8 +1,10 @@
 <?php
 
-namespace Comments;
+namespace App\Models;
 
-class Comments extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Comments extends Model {
 
 	protected $table = 'Comments';
 	public $timestamps = false;
